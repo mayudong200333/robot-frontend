@@ -4,6 +4,10 @@ const getCapacity = () => {
     return http.get('/currentcapacity');
 }
 
+const getFreeBox = () => {
+    return http.get('/getallfreebox');
+}
+
 const appendNewBox = (shedid,body) => {
     return http.post(`/appendnewbox/${shedid}`,body)
 }
@@ -22,6 +26,7 @@ const deleteBox = (shedid,boxid) => {
 
 const warehouseService = {
     getCapacity,
+    getFreeBox,
     appendNewBox,
     takeBox,
     appendBox,
